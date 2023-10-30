@@ -18,16 +18,16 @@ func NewCache() *Cache {
 	}
 }
 
-func (c *Cache) Set(key string, Order models.Order) {
+func (c *Cache) Set(uid string, order models.Order) {
 	c.Lock()
 	defer c.Unlock()
-	c.orders[key] = Order
+	c.orders[uid] = order
 }
 
-func (c *Cache) GetOrderByUid(key string) (models.Order, error) {
+func (c *Cache) GetOrderByUid(uid string) (models.Order, error) {
 	c.RLock()
 	defer c.RUnlock()
-	order, ok := c.orders[key]
+	order, ok := c.orders[uid]
 	if !ok {
 		return order, errors.New("error cach GetOrderByUid")
 	}

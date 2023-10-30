@@ -1,15 +1,15 @@
 package models
 
 type Item struct {
-	chrt_id      int    `json:"chrt_id"`
-	track_number string `json:"track_number"`
-	price        int    `json:"price"`
-	rid          string `json:"rid"`
-	name         string `json:"name"`
-	sale         int    `json:"sale"`
-	size         string `json:"size"`
-	total_price  int    `json:"total_price"`
-	nm_id        int    `json:"nm_id"`
-	brand        string `json:"brand"`
-	status       int    `json:"status"`
+	Chrt_id      int    `json:"chrt_id" db:"chrt_id"`
+	Track_number string `json:"track_number" db:"track_number"`
+	Price        int    `json:"price" db:"price"`
+	Rid          string `json:"rid" db:"rid"`
+	Name         string `json:"name" db:"name"`
+	Sale         int    `json:"sale" db:"sale"`
+	Size         string `json:"size" db:"size"`
+	Total_price  int    `json:"total_price" db:"total_price"`
+	Nm_id        int    `json:"nm_id" db:"nm_id"`
+	Brand        string `json:"brand" db:"brand"`
+	Status       int    `json:"status" db:"status"`
 }

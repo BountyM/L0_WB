@@ -28,16 +28,16 @@ func main() {
 		logrus.Fatalf("failed to initialize db :%s", err.Error())
 	}
 
-	var users []models.Order
+	var orders []models.Order
 
-	// get all users from DB
-	users, err = postgres.GetUsers(db)
+	// get all orders from DB
+	orders, err = postgres.GetOrders(db)
 	if err != nil {
-		logrus.Fatalf("error by getting users from postgres :%s", err)
+		logrus.Fatalf("error by getting orders from postgres :%s", err)
 	}
-	// set users into cache
-	for _, user := range users {
-		cache.Set(user.ID, user)
+	// set orders into cache
+	for _, order := range orders {
+		cache.Set(order.Order_uid, order)
 	}
 
 	// nats
