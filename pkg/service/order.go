@@ -1,6 +1,9 @@
 package service
 
-import "github.com/BountyM/L0_WB/models"
+import (
+	"github.com/BountyM/L0_WB/models"
+	"github.com/BountyM/L0_WB/pkg/repository"
+)
 
 type OrderService struct {
 	repo repository.Order
