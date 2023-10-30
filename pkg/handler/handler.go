@@ -1,6 +1,9 @@
 package handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/BountyM/L0_WB/pkg/service"
+	"github.com/gin-gonic/gin"
+)
 
 type Handler struct {
 	services *service.Service
@@ -15,7 +18,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 
 	order := router.Group("/order")
 	{
-		order.GET("/:uid", h.getUserByUid)
+		order.GET("/:uid", h.getOrderByUid)
 	}
 
 	return router
