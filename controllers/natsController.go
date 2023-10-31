@@ -34,7 +34,7 @@ func CheckCache(cache *cache.Cache, order models.Order, db *sqlx.DB) {
 	} else {
 		order_db, err := postgres.GetOrder(db, order.Order_uid)
 		if err != nil {
-			logrus.Fatalf("error  postgres.GetUser in controllers CheckCache :%s", err)
+			logrus.Fatalf("error  postgres.GetOrder in controllers CheckCache :%s", err)
 		}
 		if reflect.DeepEqual(order, order_db) {
 			logrus.Info("duplicate key: " + order.Order_uid)
