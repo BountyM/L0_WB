@@ -62,7 +62,7 @@ func main() {
 		logrus.Fatalf("error occured while running http server: %s", err.Error())
 	}
 
-	// Unsubscribe
+	// Unsubscribesudo docker-compose -f nats&nats-streaming.yaml up -d
 	sub.Unsubscribe()
 
 	// Close connection
