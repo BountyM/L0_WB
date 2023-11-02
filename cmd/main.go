@@ -41,7 +41,6 @@ func main() {
 	}
 
 	// nats
-	// clusterID, clientID := "stanClusterID ", "clientID"
 
 	sc, err := stan.Connect("test-cluster", "test", stan.NatsURL("nats://172.17.0.1:4223"))
 	if err != nil {
