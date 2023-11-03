@@ -65,7 +65,6 @@ func GetDelivery(db *sqlx.DB, uid string) (models.Delivery, error) {
 	var delivery models.Delivery
 	query := `SELECT * FROM deliveries WHERE "order_uid" = $1`
 	err := db.Get(&delivery, query, uid)
-
 	return delivery, err
 }
 
@@ -78,9 +77,9 @@ func GetPayment(db *sqlx.DB, uid string) (models.Payment, error) {
 }
 
 func GetItems(db *sqlx.DB, track_number string) ([]models.Item, error) {
-	items := make([]models.Item, 1)
+	items := make([]models.Item, 0)
 	query := `SELECT * FROM items WHERE "track_number" = $1`
-	err := db.Get(&items, query, track_number)
+	err := db.Select(&items, query, track_number)
 
 	return items, err
 }
